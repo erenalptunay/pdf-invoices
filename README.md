@@ -6,6 +6,16 @@ A Python-based automated invoice generation system that converts Excel spreadshe
 
 This project automatically processes Excel files containing invoice data and generates formatted PDF invoices with company branding. It's designed to streamline the invoice creation process for businesses by converting structured data into professional-looking documents.
 
+### 📄 Generated Invoice PDF from the Table Below
+
+[![Invoice Preview](images/10001-2023.1.18.png)](PDFs/10001-2023.1.18.pdf)
+
+| product_id | product_name | amount_purchased | price_per_unit | total_price |
+|------------|--------------|------------------|----------------|-------------|
+| 8198129    | Water Pump   | 2                | 151            | 302         |
+| 4772822    | Microscope   | 1                | 37             | 37          |
+
+
 ## 🚀 Features
 
 - **Batch Processing**: Automatically processes multiple Excel files from a directory
@@ -18,7 +28,9 @@ This project automatically processes Excel files containing invoice data and gen
 ## 📁 Project Structure
 
 ```
-invoice-generation/
+pdf-invoices/
+├── images/
+│   ├── 10001-2023.1.18.pdf
 ├── invoices/
 │   ├── 10001-2023.1.18.xlsx
 │   ├── 10002-2023.1.18.xlsx
@@ -40,12 +52,6 @@ The Excel files should contain the following columns:
 - `amount_purchased`: Quantity of items
 - `price_per_unit`: Unit price
 - `total_price`: Total cost (amount × price per unit)
-
-### Example Data Structure:
-| product_id | product_name | amount_purchased | price_per_unit | total_price |
-|------------|--------------|------------------|----------------|-------------|
-| 8198129    | Water Pump   | 2                | 151            | 302         |
-| 4772822    | Microscope   | 1                | 37             | 37          |
 
 ## 🛠️ Installation
 
