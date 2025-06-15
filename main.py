@@ -15,9 +15,29 @@ for filepath in filepaths:
 
     filename = Path(filepath).stem
     invoice_nr = filename.split('-')[0]
+    invoice_date = filename.split('-')[1]
 
-    pdf.set_font('Times', size=16, style='B')
+    pdf.set_font('Times', size=14, style='B')
+    pdf.cell(w=50, h=6, txt=f"Invoice nr.{invoice_nr}", align='L', ln=1)
+    pdf.cell(w=50, h=6, txt=f"Date {invoice_date}", align='L', ln=1)
 
-    pdf.cell(w=50, h=8, txt=f"Invoice nr.{invoice_nr}", align='L')
+    # Add table
+    pdf.ln()
+    col_width = 38
+    row_height = 8
+    pdf.set_font('Times', size=12, style='B')
+
+    for col_name in df.columns:
+        col_name = col_name.replace("_", " ").title()
+        pdf.cell(w=col_width, h=row_height, txt=col_name, align='C', border=1)
+    pdf.ln(row_height)
+
+    pdf.set_font('Times', size=8)
+
+    for index, row in df.iterrows():
+        for item in row:
+            pdf.cell(w=col_width, h=row_height, txt=str(item), align='C', border=1)
+        pdf.ln(row_height)
+
 
     pdf.output(f"PDFs/{filename}.pdf")
