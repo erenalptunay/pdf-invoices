@@ -40,10 +40,14 @@ for filepath in filepaths:
         pdf.ln(row_height)
 
     # Add Total Price
-    total_price = float(df["total_price"].sum())
+    total_price = int(df["total_price"].sum())
     for i in range(len(df.columns)-1):
         pdf.cell(w=col_width, h=row_height, align='L', border=1)
     pdf.cell(w=col_width, h=row_height, txt=f"{total_price}", align='L', border=1)
 
+    # Add Total Price text
+    pdf.ln(20)
+    pdf.set_font('Times', size=10, style='B')
+    pdf.cell(w=50, h=7, txt=f"The total amount is {total_price} Euros.", align='L', ln=1)
 
     pdf.output(f"PDFs/{filename}.pdf")
