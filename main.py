@@ -46,8 +46,14 @@ for filepath in filepaths:
     pdf.cell(w=col_width, h=row_height, txt=f"{total_price}", align='L', border=1)
 
     # Add Total Price text
-    pdf.ln(20)
+    pdf.ln(10)
     pdf.set_font('Times', size=10, style='B')
     pdf.cell(w=50, h=7, txt=f"The total amount is {total_price} Euros.", align='L', ln=1)
+
+    # Add the company logo and name
+    pdf.ln()
+    pdf.image("logo.png", w=10)
+    pdf.cell(w=20, h=7, txt=f"Company Name", align='L')
+
 
     pdf.output(f"PDFs/{filename}.pdf")
