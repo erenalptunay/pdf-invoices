@@ -5,8 +5,6 @@ from pathlib import Path
 
 filepaths = glob.glob("invoices/*.xlsx")
 
-print(filepaths)
-
 
 for filepath in filepaths:
     df = pd.read_excel(filepath, sheet_name="Sheet 1")
@@ -54,6 +52,5 @@ for filepath in filepaths:
     pdf.ln()
     pdf.image("logo.png", w=10)
     pdf.cell(w=20, h=7, txt=f"Company Name", align='L')
-
 
     pdf.output(f"PDFs/{filename}.pdf")
