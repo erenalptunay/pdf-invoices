@@ -39,6 +39,9 @@ pdf-invoices/
 │   ├── 10001-2023.1.18.pdf
 │   ├── 10002-2023.1.18.pdf
 │   └── 10003-2023.1.18.pdf
+├── .gitignore
+├── LICENSE
+├── requirements.txt
 ├── logo.png
 ├── main.py
 └── README.md
@@ -128,6 +131,10 @@ For support and questions:
 - Create an issue in the repository
 - Check the troubleshooting section above
 - Review the code comments for implementation details
+
+## 📚 Reference
+
+Course: *Python Mega Course: Learn Python in 60 Days, Build 20 Apps*, Udemy.
 
 ## 📜 License
 
